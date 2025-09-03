@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+//Textos
+$fuenteprincipal: "Barlow Condensed", sans-serif;
+$fuenteretro: "Roboto", sans-serif;
+
+
+//Colores
+$primario: #ff00ff;
+$primario0scuro: #E74398;
+$secundario: #FFCE00;
+$secundario0scuro: #F9E32C;
+$blanco: #ffffff;
+$negro: #000000;
+
+//media Queries
+
+$telefono: 480px;
+$tablet : 768px;
+$desktop : 1200px;
+$desktopXL : 1400px;

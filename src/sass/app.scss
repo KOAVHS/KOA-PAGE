@@ -1,0 +1,360 @@
+@use 'base/variables' as *;
+@use 'base/normalize' as *;
+@use 'base/components' as *;
+@use 'base/layout' as *;
+@use 'base/mixins' as m;
+@use 'base/globales' as *;
+
+
+
+  /** Header **/
+ .vaporwave-logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 600px;
+  opacity: 0.50; 
+  z-index: 1;
+  filter: drop-shadow(0 0 4px rgba(11, 8, 214, 0.8));
+  animation: floatLogo 8s ease-in-out infinite;
+}
+
+@keyframes floatLogo {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -52%) scale(1.03);
+  }
+}
+
+
+
+
+
+
+
+  .zindex{
+    z-index: 1000;
+  }
+
+  
+  .logo-text {
+  font-size: 120px;
+  color: rgba(7, 224, 173, 0.90);
+  text-shadow: 3px 3px 0 #ff00c8;
+  font-family: $fuenteretro;
+ 
+  }
+   @media ($telefono) {
+    .logo-text {
+      padding: 2rem;
+    }
+   }
+
+ 
+  
+
+  .content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  }
+  .logo-text-group {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+  
+.title {
+  font-size: 32px;
+  margin-top: -30px;
+  color: #ffffffbb;
+  letter-spacing: 5px;
+  
+}
+  
+  /**Fin de header**/
+  
+  /** Navegacion **/
+
+
+  .navegacion {
+    display: flex;
+    justify-content: flex-end;
+    padding:  1rem;
+    gap: 1.2rem;
+    border: #ccc solid 1px;
+    background-color: transparent;
+    transition: background-color 0.5s ease;
+}
+
+.navegacion:hover{
+  background-color: #000000;
+  transition: background-color 0.3s ease;
+}
+
+/* Ocultar el menú en pantallas pequeñas */
+.menu-toggle {
+  display: none;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Ocultar la navegación inicialmente */
+    .navegacion {
+        display: none;
+        flex-direction: column;
+        gap: 0.5rem;
+        position: absolute;
+        top: 3rem;
+        right: 1rem;
+        background-color: #000000;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 2;
+    }
+
+    /* Mostrar la navegación cuando esté abierta */
+    .navegacion.active {
+        display: flex;
+    }
+}
+
+.navegacion__enlace{
+ font-family:$fuenteprincipal;
+ color: $blanco;
+ font-size: 3rem;
+ margin-right: 1rem;
+}
+.navegacion__enlace:last-of-type{
+  margin-right: 0;
+}
+.navegacion__enlace--activo,
+.navegacion__enlace:hover {
+ color: $primario;
+}
+
+
+/* fin de la navegacion */
+
+/*sub nav*/
+
+.sub-nav {
+  font-size: 2.2rem;
+  display: flex;
+  gap: 20px;
+  font-family: $fuenteprincipal;
+  padding: 10px 20px;
+}
+
+.sub-nav .left-side{
+  margin-right: 15px;
+  gap: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.sub-nav .right-side a img {
+  width: 30px;
+  height: 30px;
+  margin-left: 10px;
+  filter: drop-shadow(0 0 5px #ff00ff);
+  transition: transform 0.3s ease;
+  margin: 10px;
+}
+
+.sub-nav .right-side a img:hover {
+  transform: scale(1.2);
+}
+
+
+@media (max-width: 768px) {
+  .sub-nav {
+    flex-direction: column;
+  }
+}
+
+.fontnav{
+  color: #ccc;
+  all: unset;         
+  cursor: pointer;
+  margin: 10px;
+}
+
+
+
+// contendio grid
+
+.updates-grid {
+  display: grid;
+  grid-template-columns: repeat(2fr, 800px);
+  gap: 20px;
+  padding: 40px;
+  backdrop-filter: blur(4px);
+
+  width: 90vw;          
+  max-width: 1000px;    
+  height: 70vh;         
+  overflow-y: auto;     
+  overflow-x: hidden;   
+  margin: 0 auto;       
+  box-sizing: border-box;
+}
+
+.update-card {
+  background-color: #00ffff;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
+  padding: 20px;
+  color: #000000;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  filter: brightness(70%);
+
+   min-height: 200px;  
+  overflow-y: auto;
+}
+
+.update-card h3 {
+  display: flex;
+  justify-items: flex-start;
+  color: #ff00ff;
+  margin-bottom: 10px;
+}
+
+.update-card p {
+  font-size: 25px;
+  color: #000000;
+  letter-spacing: 2px;
+  
+}
+
+.update-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff00ff, 0 0 25px #0ff;
+}
+
+
+// Links
+ /* Fondo oscuro */
+ .overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 60%;
+    height: 60%;
+    background: #fff;
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+    animation: popIn 0.4s ease-out;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+
+//wanted
+
+.overley {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 0, 15, 0.8);
+    backdrop-filter: blur(6px);
+    z-index: 1000;
+}
+
+/* Ventana flotante estilo neón */
+.ventana-wanted {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 25px;
+    max-width: 50%;
+    height: 50%;
+    margin: 100px auto;
+    text-align: center;
+    box-shadow: 0 0 25px #ff00ff, 0 0 50px #ff0095;
+    border: 2px solid #ff00d9;
+    animation: aparecer 0.3s ease;
+}
+
+
+/* Animación de aparición */
+@keyframes aparecer {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes multicolor {
+   0%   { color: #feda75; }
+  25%  { color: #fa7e1e; }
+  50%  { color: #d62976; }
+  75%  { color: #962fbf; }
+  100% { color: #4f5bd5; }
+}
+
+/* Título neón */
+.titulo-neon {
+    font-size: 22px;
+    color: #fff;
+    animation: multicolor 3s infinite alternate linear;
+    margin-bottom: 15px;
+}
+
+/* Links */
+.ventana-wanted a {
+    display: block;
+    margin: 10px 0;
+    color: #00ffff;
+    font-weight: bold;
+    text-decoration: none;
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
+    transition: 0.2s;
+    font-size: 15px;
+    
+}
+.ventana-wanted a:hover {
+    color: #ff00ff;
+    text-shadow: 0 0 5px #ff00ff, 0 0 15px #00ffff;
+}
+
+/* Botón cerrar */
+.cerrar {
+    background: transparent;
+    color: #ff00ff;
+    border: 2px solid #ff00ff;
+    padding: 6px 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.2s;
+    text-shadow: 0 0 5px #ff00ff;
+}
+.cerrar:hover {
+    background: #ff00ff;
+    color: black;
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+}

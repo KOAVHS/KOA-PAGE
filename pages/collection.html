@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colletion</title>
+      <link rel="stylesheet" href="../dist/css/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+<nav class="navegacion" id="navegacion">
+  <a class="navegacion__enlace" href="index.html">home</a>
+  <a class="navegacion__enlace" href="about.html">about us</a>
+  <a class="navegacion__enlace navegacion__enlace--activo" href="collection.html">collection</a>
+  <a class="navegacion__enlace" href="storeFAQ.html">store FAQ</a>
+  
+</nav>
+<script>function toggleMenu() {
+  document.getElementById("navegacion").classList.toggle("active");
+}
+</script>
+<div class="background-layer"></div>
+<script>
+  window.addEventListener('load', () => {
+    const bg = document.querySelector('.background-layer');
+    setTimeout(() => {
+      bg.classList.add('active'); 
+    }, 200);
+  });
+</script>\
+
+
+<header class="header-collection">
+  <h2>¡Nueva coleccion disponible!</h2>
+   <div class="header-images">
+   </div>
+</header>
+
+<section class="contenido_ofertas">
+  <h1>Ofertas</h1>
+
+  <div class="carousel">
+    <div class="carousel-track">
+
+  <div class="div-ofertas">
+    <a href="#"><div class="offer-card" id="shirtImage">
+      <img src="\producto\f093a2a510d543e98fffe9b85b59c76e-removebg-preview.png" alt="Oferta 1">
+      <h3>Producto en Descuento!</h3>
+      <p>$249</p>
+
+    </div>
+    </a>
+    <a href="#"><div class="offer-card">
+      <img src="\producto\f093a2a510d543e98fffe9b85b59c76e-removebg-preview.png" alt="Oferta 2">
+      <h3>Producto en Descuento!</h3>
+      <p>$249</p>
+      
+
+    </div>
+    </a>
+    <a href="#"><div class="offer-card">
+      <img src="\producto\f093a2a510d543e98fffe9b85b59c76e-removebg-preview.png" alt="Oferta 3">
+      <h3>Producto en Descuento!</h3>
+      <p>$249</p>
+      
+
+    </div>
+    </a>
+    <a href="#"><div class="offer-card">
+      <img src="\producto\f093a2a510d543e98fffe9b85b59c76e-removebg-preview.png" alt="Oferta 4">
+      <h3>Producto en Descuento!</h3>
+      <p>$249</p>
+
+    </div>
+    </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+</section>
+
+<section class="contenido_productos">
+
+
+</section>
+
+
+
+
+
+<footer class="footer">
+  
+  <p>© 2025 KOA VHS. Todos los derechos reservados.
+Términos y Condiciones | Aviso de Privacidad | Política de Cookies</p>
+</footer>
+<script src="script.js"></script>
+<script src="\src\js\ui.js"></script>
+</body>
+</html>

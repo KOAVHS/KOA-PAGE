@@ -1,0 +1,49 @@
+@use 'base/variables' as v;
+
+
+@mixin fondo-instagram {
+      background: linear-gradient(
+    45deg,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+
+
+
+
+// media
+
+@mixin telefono {
+  @media (min-width:v.$telefono){
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width:v.$tablet){
+    @content;
+  }
+}
+
+
+@mixin desktop {
+  @media (min-width:v.$desktop){
+    @content;
+  }
+}
+
+
+@mixin desktopXL {
+  @media (min-width:v.$desktopXL){
+    @content;
+  }
+}
+
+
+//navegacion
+
+
