@@ -11,6 +11,7 @@
   "type": "module",
   "main": "form.js",
   "scripts": {
+    "build": "sass src/scss:pages/css",
     "sass": "sass --watch src/sass:dist/css",
     "start": "node server.js",
     "dev": "gulp"

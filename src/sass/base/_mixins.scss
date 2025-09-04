@@ -18,7 +18,7 @@
 // media
 
 @mixin telefono {
-  @media (min-width:v.$telefono){
+  @media (max-width:v.$telefono){
     @content;
   }
 }

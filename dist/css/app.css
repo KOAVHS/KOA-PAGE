@@ -331,7 +331,7 @@ template {
 .contenedor {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 4rem 20px;
 }
 
 .footer {
@@ -513,7 +513,6 @@ template {
   min-height: 70vh;
 }
 
-/* Ventana estilo Windows 95 */
 .window {
   position: absolute;
   border: 2px solid #ccc;
@@ -533,7 +532,30 @@ template {
   left: 430px;
 }
 
-/* Barra de título */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 20px;
+    flex-direction: column;
+    min-height: auto;
+  }
+  .window {
+    position: static;
+    width: 100%;
+    max-width: 95vw;
+    left: unset;
+    top: unset;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  .window1,
+  .window2 {
+    left: unset;
+    top: unset;
+    width: 100%;
+    max-width: 95vw;
+    margin-bottom: 20px;
+  }
+}
 .window-header {
   background: #0078d7;
   color: white;
@@ -544,7 +566,6 @@ template {
   font-size: 12px;
 }
 
-/* Botones de ventana */
 .window-buttons button {
   background: lightgray;
   border: 1px solid #555;
@@ -559,7 +580,6 @@ template {
   background: #ddd;
 }
 
-/* Contenido */
 .window-content {
   padding: 20px;
   font-family: "Press Start 2P", cursive;
@@ -579,7 +599,6 @@ template {
   font-size: 15px;
 }
 
-/* Animación de aparición */
 @keyframes popIn {
   0% {
     transform: scale(0.9);
@@ -910,6 +929,10 @@ h3 {
   gap: 20px;
   padding: 40px;
   backdrop-filter: blur(4px);
+  background-color: #00ffff;
+  border: 2px solid #0ff;
+  box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
+  filter: brightness(70%);
   width: 90vw;
   max-width: 1000px;
   height: 70vh;
@@ -920,15 +943,11 @@ h3 {
 }
 
 .update-card {
-  background-color: #00ffff;
-  border: 2px solid #0ff;
-  box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
   padding: 20px;
   color: #000000;
   font-family: "Orbitron", sans-serif;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  filter: brightness(70%);
   min-height: 200px;
   overflow-y: auto;
 }

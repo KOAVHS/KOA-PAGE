@@ -1,36 +1,31 @@
-let nombre = "KOA VHS";
-let descripcion = "Venta de productos de alta calidad para su hogar o negocio";
-let imagen = "src/img/logo.png";
-
-let ofertas = [
-  {
-    nombre: "Shirt",
-    descripcion: "Una camiseta de alta calidad",
-    precio: 249,
-    imagen: "src/img/ofertas/1.png",
-  },
-  {
-    nombre: "Shirt",
-    descripcion: "Una camiseta de alta calidad",
-    precio: 249,
-    imagen: "src/img/ofertas/2.png",
-  },
-];
-
-let productos = [
-  {
-    nombre: "Shirt",
-    descripcion: "Una camiseta",
-    precio: 249,
-    imagen: "src/img/productos/1.png",
-  },
-  {
-    nombre: "Shirt",
-    descripcion: "Una camiseta",
-    precio: 249,
-    imagen: "src/img/productos/2.png",
-  },
-];  
+fetch('../updates.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('No se pudo cargar updates.json');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);
+        const grid = document.querySelector('.updates-grid');
+        if (grid) {
+            grid.innerHTML = data.reverse().map(update =>  {
+                return `<div class="update-card">
+                    <h3>${update.fecha}</h3>
+                    <p>${update.titulo}</p>
+                </div>`;
+            }).join('');
+        } else {
+            console.warn('No se encontró el contenedor .updates-grid');
+        }
+    })
+    .catch(error => {
+        console.error('Error al cargar actualizaciones:', error);
+        const grid = document.querySelector('.updates-grid');
+        if (grid) {
+            grid.innerHTML = '<p style="color:red">No se pudieron cargar las actualizaciones.</p>';
+        }
+    });
 const track = document.querySelector('.carousel-track');
 let position = 0;
 const speed = 2;
