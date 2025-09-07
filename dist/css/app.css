@@ -310,6 +310,21 @@ template {
   display: none;
 }
 
+.background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff00ff, #9b59b6, #3498db, #00ffff);
+  background-size: cover;
+  background-attachment: fixed;
+  filter: brightness(70%);
+  transition: background 1.5s ease;
+}
+
 .header {
   padding: 60px;
   margin: 0;
@@ -705,6 +720,7 @@ main {
 }
 
 .background-layer {
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
@@ -713,9 +729,6 @@ main {
   z-index: -1;
   background: linear-gradient(135deg, #ff00ff, #9b59b6, #3498db, #00ffff);
   background-size: cover;
-  background-attachment: fixed;
-  filter: brightness(70%);
-  transition: background 1.5s ease;
 }
 
 .background-layer.active {
