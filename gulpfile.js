@@ -8,6 +8,7 @@ import gulpSass from 'gulp-sass'
 
 const sass = gulpSass(dartSass)
 
+
 export function js(done){
 
      src('src/js/**/*.js')         
@@ -27,6 +28,7 @@ export function css(done){
 
 
 
+
 export function dev(){
     watch('src/sass/**/*.scss', css)
     watch('src/js/**/*.js', js)
@@ -35,4 +37,4 @@ export function dev(){
 }
 
 
-export default series(js,css,dev)
+export default series(js, css, dev)

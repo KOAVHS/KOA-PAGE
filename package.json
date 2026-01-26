@@ -1,9 +1,11 @@
 {
   "dependencies": {
+    "animejs": "^4.2.2",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.3",
     "express": "^4.21.2",
-    "mongoose": "^8.14.3"
+    "mongoose": "^8.14.3",
+    "react-snowfall": "^2.4.0"
   },
   "name": "koavhs",
   "version": "1.0.0",
@@ -14,7 +16,7 @@
     "build": "sass src/scss:pages/css",
     "sass": "sass --watch src/sass:dist/css",
     "start": "node server.js",
-    "dev": "gulp"
+    "dev": "npx concurrently \"gulp\" \"npx live-server --port=5500 --open=./\""
   },
   "keywords": [
     "koavhs"
@@ -28,6 +30,9 @@
     "gulp-concat": "^2.6.1",
     "gulp-sass": "^6.0.1",
     "gulp-uglify": "^3.0.2",
-    "sass": "^1.90.0"
+    "sass": "^1.90.0",
+    "sharp": "^0.34.3",
+    "concurrently": "^8.0.1",
+    "live-server": "^1.2.2"
   }
 }

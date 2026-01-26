@@ -1,3 +1,6 @@
+// imports
+
+
 @use 'base/variables' as *;
 @use 'base/normalize' as *;
 @use 'base/components' as *;
@@ -88,7 +91,7 @@
   .navegacion {
     display: flex;
     justify-content: flex-end;
-    padding:  1rem;
+    padding:  1.5rem;
     gap: 1.2rem;
     border: #ccc solid 1px;
     background-color: transparent;

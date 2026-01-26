@@ -26,3 +26,26 @@ fetch('../updates.json')
             grid.innerHTML = '<p style="color:red">No se pudieron cargar las actualizaciones.</p>';
         }
     });
+
+
+    function Galeria(){
+        const CANTIDAD = 10;
+        const Galeria = document.querySelector('.gallery');
+
+        for (let i = 1 ;  i<=CANTIDAD ; i++){
+            const img = document.createElement('img');
+            img.src = `../src/img/gallery/thumb/${i}.jpg`;
+            img.loading="lazy";
+            img.width="300";
+            img.height="300";
+            img.alt = `Imagen ${i}`;
+            Galeria.appendChild(img);
+
+            //mostrar imagen en grande al hacer click
+            imagen.Onclick = function(){
+                mostrarImagen(i);
+        }
+    }
+
+}
+    

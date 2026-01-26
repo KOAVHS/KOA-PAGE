@@ -37,186 +37,57 @@
 
 .footer{
   text-align: center;
-  margin: 0;
+  margin-top: auto;
   padding: 40px 20px;
   border-top: 1px solid #ccc;
 
 }
 
 
-// StoreFAQ
-
-
-   #store-faq { 
-    --neon1: #ff6ec7;
-     --neon2: #7afcff;
-      --glass: rgba(255,255,255,0.06);
-       --card-bg: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01)); 
-       }
-
-    #store-faq .faq-wrap {
-      max-width: 980px;
-      margin: 32px auto;
-      padding: 28px;
-      border-radius: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      backdrop-filter: blur(6px) saturate(120%);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.45);
-      border: 1px solid rgba(255,255,255,0.04);
-    }
-
-    #store-faq .faq-header {
-      display:flex;
-      align-items:center;
-      gap:18px;
-      margin-bottom:18px;
-    }
-
-    #store-faq h2 {
-      font-family: 'Press Start 2P', monospace;
-      font-size:16px;
-      letter-spacing:1px;
-      color: var(--neon1);
-      margin:0;
-      text-shadow: 0 0 8px rgba(255,110,199,0.25), 0 0 20px rgba(122,252,255,0.06);
-    }
-
-    #store-faq p.lead {
-      margin:0;
-      font-family: 'Orbitron', sans-serif;
-      color:#d7f9ff;
-      opacity:0.9;
-      font-size:13px
-    }
-
-    #store-faq .faq-grid {
-      display:grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap:18px;
-      margin-top:20px;
-    }
-
-    @media (max-width:880px){
-      #store-faq .faq-grid{grid-template-columns:1fr}
-    }
-
-    .faq-card {
-      background: var(--card-bg);
-      border-radius:12px;
-      padding:14px;
-      border: 1px solid rgba(122,252,255,0.08);
-      box-shadow: 0 6px 18px rgba(16,10,30,0.45);
-      position:relative;overflow:hidden;
-    }
-
-    .faq-card::before {
-      content:'';
-      position:absolute;
-      inset:0;
-      background:linear-gradient(120deg, transparent 30%, rgba(122,252,255,0.03) 30% 60%, transparent 60%);
-      pointer-events:none;
-    }
-
-    .faq-q {
-      width:100%;
-      text-align:left;
-      font-family: 'Orbitron', sans-serif;
-      font-weight:700;
-      color:#fff;
-      background:transparent;border:0;padding:10px 8px;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:12px
-    }
-
-    .faq-q .qtext {
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start
-    }
-
-    .faq-q .qtitle {
-      color:var(--neon2);
-      font-size:13px
-    }
-
-    .faq-q .qsubtitle {
-      font-size:11px;
-      color:#bfeef7;
-      opacity:0.85
-    }
-
-    .faq-q .chev {
-      font-family:monospace;
-      font-size:12px;
-      color:#dffcff;
-      opacity:0.9;
-      transform:rotate(0);
-      transition:transform .25s ease
-    }
-    .faq-card.open .faq-q .chev{
-      transform:rotate(180deg)
-    }
-
-    .faq-a {
-      max-height:0;
-      overflow:hidden;
-      transition:max-height .36s cubic-bezier(.2,.9,.2,1),opacity .25s ease;
-      padding:0 8px;
-      color:#e6ffff;
-      font-family: 'Orbitron', sans-serif;
-      font-size:13px;
-      line-height:1.5;
-      opacity:0
-    }
-
-    .faq-card.open .faq-a {
-      opacity:1;
-      padding:12px 8px 4px 8px;
-      max-height:420px
-    }
-
-    .accent-line {
-      height:6px;
-      border-radius:6px;
-      margin-bottom:12px;
-      background:linear-gradient(90deg,var(--neon1),var(--neon2));
-      box-shadow:0 4px 18px rgba(122,252,255,0.06)
-    }
-
-    .meta {
-      font-size:11px;
-      color:#bdeff6;
-      opacity:0.8;
-      margin-top:8px
-    }
-
-    .badge {
-      display:inline-block;
-      padding:6px 10px;
-      border-radius:999px;
-      font-family:'Press Start 2P',;
-      font-size:9px;
-      background:linear-gradient(90deg,rgba(255,110,199,0.12),rgba(122,252,255,0.06));
-      border:1px solid rgba(255,255,255,0.03);
-      color:#fff
-    }
 
 
 
-    //about
+
+  //about
+  .Username {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; 
+    position: relative;
+    overflow: hidden;    
+    background: rgb(0000, 0000, 0000);
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    z-index: -1;  
+    
+}
+
+  .Username-Pic{
+    display: flex;
+    align-items: center;
+  }
+
+
+.txts {
+  @include texto;
+}
 
     .about-section {
   background: 
     repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0,0,0,0.08) 20px),
     repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(0,0,0,0.08) 20px);
   padding: 50px;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   min-height: 70vh;
 }
 
 
+
 .window {
-  position: absolute;
+  position: static;
   border: 2px solid #ccc;
   background: white;
   width: 420px;
@@ -233,6 +104,7 @@
   top: 260px;   
   left: 430px; 
 }
+
 
 
 
@@ -299,6 +171,7 @@
   font-family: 'Press Start 2P', cursive;
   font-size: 10px;
   line-height: 1.5;
+  background-color: white;
   
 }
 
@@ -321,6 +194,14 @@
 }
 
 
+//my Dev
+
+.window-dev {
+  width: 100%;
+  min-height: 80vh;
+  max-height: 95vh;
+  position: absolute;
+}
  // Fin de about
 
 
@@ -356,40 +237,3 @@
 }
 
 
-// ofertas
-
-.carousel {
-  overflow: hidden;          
-  width: 100%;
-}
-
-.carousel-track {
-  display: flex;
-  gap: 20px;
-  animation: slide 10s infinite alternate linear; 
-}
-
-
-
-.offer-card{
-  width: 400px;       
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  padding: 10px;
-  text-decoration: none;
-  color: inherit;
-}
-
-
-.div-ofertas{
-   display: grid;                         
-  grid-template-columns: repeat(4, 1fr); 
-  gap: 20px;                            
-  justify-items: center;
-}
-
-.div-ofertas a {
-  text-decoration: none;  
-  color: inherit;        
-  display: block;
-}

@@ -8,6 +8,7 @@
    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KOAVHS- DEV</title>
+    <link rel="Website Icon" type = "png" href="src/img/KOAVHS.jpg">
       <link rel="stylesheet" href="dist/css/app.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,21 +18,41 @@
 <body>
     <div class="background-layer"></div>
   
-
-  
-  
 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 <nav class="navegacion" id="navegacion">
   <a class="navegacion__enlace" href="index.html">home</a>
-  <a class="navegacion__enlace" href="about.html">about us</a>
-<!-- <a class="navegacion__enlace" href="collection.html">collection</a>
-  <a class="navegacion__enlace" href="storeFAQ.html">store FAQ</a> --> 
+ <!-- <a class="navegacion__enlace" href="about.html">about</a> -->
   <a class="navegacion__enlace navegacion__enlace--activo" href="dev.html">dev</a>
+
+</nav>
 
   <script>function toggleMenu() {
   document.getElementById("navegacion").classList.toggle("active");
 }
 </script>
+
+<header>
+      <div class="window-header">
+      <span>Window.exe</span>
+      <div class="window-buttons">
+        <button class="close" onclick="cerrarVentana()">x</button>
+      </div>
+    </div>
+    <div class="window-dev">
+    <div class="window-content">
+      <h2>Dev</h2>
+
+      
+     
+     
+    </div>
+    </div>
+</header>
+
+
+
+
+
 
 
 </body>

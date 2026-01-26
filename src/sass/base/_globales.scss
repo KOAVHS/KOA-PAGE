@@ -1,4 +1,5 @@
 @use 'base/variables' as *;
+@use 'base/mixins' as *;
 html {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -8,7 +9,7 @@ html {
   }
 
 
-  html, body {
+  html, body { 
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -40,6 +41,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   z-index: -1;
   background: linear-gradient(135deg, #ff00ff, #9b59b6, #3498db, #00ffff);
   background-size: cover;
@@ -66,9 +68,13 @@ main {
   
 }
 
- .background-layer.active {
-    background: rgba(197, 45, 216, 0.924); 
-  }
+.background-layerr {
+  background-color: #000;
+
+}
+
+
+
 
 
 
@@ -90,8 +96,7 @@ main {
 
   h1,h2,h3 {
     text-align: center;
-    color: $secundario;
-    font-family:$fuenteprincipal;
+   
   }
 
   h1 {
@@ -107,4 +112,15 @@ main {
   h3 {
     font-size: 2.4rem;
   }
+
+  img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
   /** fin de Globales **/

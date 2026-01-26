@@ -44,6 +44,17 @@
 }
 
 
-//navegacion
+//texto
+
+@mixin texto {
+  color: rgb(224, 224, 33); /* Color del texto */
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black; /* Contorno negro */
+}
 
 

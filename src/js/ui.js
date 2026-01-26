@@ -1,18 +1,9 @@
-const track = document.querySelector('.carousel-track');
-let position = 0;
-const speed = 2;
-
-
-function moveCarousel(){
-    position -= speed;
-    if (position <= -track.scrollWidth / 2) {
-        position = 0;
-    }
-}
-track.style.transform = `translateX(${position}px)`;
-requestAnimationFrame(moveCarousel);
-
-
-moveCarousel();
-track.parentElement.addEventListener(`mouseenter`, () => speed = 0);
-track.parentElement.addEventListener(`mouseleave`, () => speed = 2);
+ const fills = document.querySelectorAll(".fill");
+    fills.forEach(bar => {
+      let width = parseInt(bar.style.width);
+      setInterval(() => {
+        let random = (Math.random() * 10 - 5); // variación aleatoria
+        width = Math.min(100, Math.max(0, width + random));
+        bar.style.width = width + "%";
+      }, 2000);
+    });
