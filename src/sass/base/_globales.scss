@@ -117,6 +117,12 @@ main {
   image-rendering: pixelated;
   image-rendering: crisp-edges;
 }
+  nav {
+        display: flex;
+        gap: 1.5rem;
+        align-items: center;
+    }
+  
 
 .wrapper {
   min-height: 100vh;

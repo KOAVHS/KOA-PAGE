@@ -8,6 +8,23 @@
 @use 'base/mixins' as m;
 @use 'base/globales' as *;
 
+:root {
+--bg-primary: #0d1117;
+--bg-secondary: #161b22;
+--bg-tertiary: #21262d;
+--border-default: #30363d;
+--border-muted: #21262d;
+--text-primary: #c9d1d9;
+--text-secondary: #8b949e;
+--text-tertiary: #6e7681;
+--accent-primary: #58a6ff;
+--accent-green: #3fb950;
+--accent-purple: #a371f7;
+--accent-pink: #f778ba;
+--accent-orange: #f0883e;
+--shadow-color: rgba(1, 4, 9, 0.85);
+}
+
 
 
   /** Header **/
@@ -31,6 +48,7 @@
     transform: translate(-50%, -52%) scale(1.03);
   }
 }
+
 
 
 
@@ -104,6 +122,7 @@
 }
 
 /* Ocultar el menú en pantallas pequeñas */
+
 .menu-toggle {
   display: none;
   font-size: 3rem;
@@ -125,9 +144,7 @@
         display: none;
         flex-direction: column;
         gap: 0.5rem;
-        position: absolute;
-        top: 3rem;
-        right: 1rem;
+        position: static;
         background-color: #000000;
         border: 1px solid #ddd;
         padding: 1rem;
@@ -166,13 +183,16 @@
   gap: 20px;
   font-family: $fuenteprincipal;
   padding: 10px 20px;
+  background-color: #00000020;
+  
 }
 
 .sub-nav .left-side{
-  margin-right: 15px;
+  margin-right: 10px;
   gap: 20px;
   color: #fff;
   text-decoration: none;
+  
 }
 
 
@@ -203,9 +223,82 @@
   margin: 10px;
 }
 
+/* Estilos para los botones del sub-nav */
+.sub-nav__btn {
+  background: none;
+  border: none;
+  color: #8b949e;
+  font-size: 1.2rem;
+  font-family: 'Orbitron', monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(255, 0, 255, 0.3);
+}
+
+.sub-nav__btn:hover {
+  color: #c9d1d9;
+  text-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+}
+
+.sub-nav__btn--active {
+  color: #58a6ff;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.8), 0 0 20px rgba(255, 0, 255, 0.4);
+  border-bottom: 2px solid #58a6ff;
+}
+
+/* Clase para ocultar secciones */
+.hidden {
+  display: none !important;
+}
+
+/* Estilos para los contenedores de sección */
+.section-container {
+  margin: 6rem auto;
+  max-width: 1400px;
+  padding: 0 1rem;
+  animation: fadeIn 0.4s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header de cada sección */
+.section-header {
+  font-size: 2.5rem;
+  color: #58a6ff;
+  font-family: 'Orbitron', monospace;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(88, 166, 255, 0.5), 0 0 20px rgba(255, 0, 255, 0.3);
+}
 
 
-// contendio grid
+.navsoftware{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  background-color: #000000;
+  color: #fff;
+}
+
+.txtsoftware{
+  font-size: 30px;
+  font-family: 'Courier New', Courier, monospace
+}
 
 .updates-grid {
   display: grid;
@@ -285,20 +378,20 @@
     top: 0; left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(5, 0, 15, 0.8);
+    background: rgba(5, 0, 15, 0.084);
     backdrop-filter: blur(6px);
     z-index: 1000;
 }
 
 /* Ventana flotante estilo neón */
 .ventana-wanted {
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.323);
     padding: 25px;
     max-width: 50%;
     height: 50%;
     margin: 100px auto;
     text-align: center;
-    box-shadow: 0 0 25px #ff00ff, 0 0 50px #ff0095;
+    box-shadow: 0 0 25px #8d8d8d, 0 0 50px #ff0095;
     border: 2px solid #ff00d9;
     animation: aparecer 0.3s ease;
 }
@@ -320,6 +413,7 @@
 
 /* Título neón */
 .titulo-neon {
+    font-family: 'JetBrains Mono', monospace;
     font-size: 22px;
     color: #fff;
     animation: multicolor 3s infinite alternate linear;
@@ -360,3 +454,4 @@
     color: black;
     box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
 }
+
